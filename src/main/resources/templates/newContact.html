@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>New contact</title>
+    <title>Новый контакт</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="../resources/css/bootstrap.css" />
     <link rel="stylesheet" href="../resources/css/bootstrap-theme.css" />
@@ -11,7 +11,7 @@
 
 <form action="#" th:action="@{/contacts/new}" th:object="${contact}" method="post">
     <p>Имя:      <input type="text" th:field="*{firstName}" /></p>
-    <p>Фамилие:       <input type="text" th:field="*{lastName}" /></p>
+    <p>Фамилия:       <input type="text" th:field="*{lastName}" /></p>
     <p>Отчество:     <input type="text" th:field="*{middleName}" /></p>
     <p>телефон мобильный:   <input type="text" th:field="*{mobileNumber}" /></p>
     <p>телефон домашний:     <input type="text" th:field="*{homeNumber}" /></p>

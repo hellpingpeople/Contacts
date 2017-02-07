@@ -1,26 +1,26 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Getting Started: Handling Form Submission</title>
+    <title>Стартовая страница</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="../resources/css/bootstrap.css" />
     <link rel="stylesheet" href="../resources/css/bootstrap-theme.css" />
 </head>
 <body>
-<h1>Login information</h1>
+<h1>Страница входа</h1>
 <div th:switch="${loginStatus}">
     <div th:case="true">
-        <h4>Success! Logged in with credentials:</h4>
-        <p th:text="'Login : ' + ${user.login} " />
-        <p th:text="'Password : ' + ${user.password}" />
-        <a th:href="@{/contacts}">Manage your contacts</a>
+        <h4>Добро пожаловать!:</h4>
+        <p th:text="'Логин : ' + ${user.login} " />
+        <p th:text="'Пароль : ' + ${user.password}" />
+        <a th:href="@{/contacts}">Управление логином</a>
     </div>
     <div th:case="false">
-        <h4>Wrong username or password!</h4>
-        <a th:href="@{/login}">Login again</a>
-        <a th:href="@{/registration}">Create account</a>
+        <h4>Неверный логин или пароль</h4>
+        <a th:href="@{/login}">Попробовать ещё раз</a>
+        <a th:href="@{/registration}">Создать аккаунт</a>
     </div>
-    <div th:case="*">Unexpected error</div>
+    <div th:case="*">Неизвестная ошибка</div>
 </div>
 </body>
 </html>

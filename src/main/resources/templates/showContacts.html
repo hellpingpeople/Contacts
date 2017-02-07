@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Contact list</title>
+    <title>Телефонная книга</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="../resources/css/bootstrap.css" />
     <link rel="stylesheet" href="../resources/css/bootstrap-theme.css" />
@@ -28,7 +28,7 @@
 
 
 <h1 th:text="'Привет, ' + ((${user.login}=='')? 'неизвестный человек!':${user.login} )"/>
-<a th:href="@{/logout}">Logout?</a>
+<a th:href="@{/logout}">Выход?</a><a th:href="@{/search}">Кого ищем?</a>
 <table>
     <tr>
         <th align="left">Фамилия</th>

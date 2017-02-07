@@ -128,6 +128,20 @@ public class WebController {
         return "showContacts";
     }
 
+    @RequestMapping(value = "/search", method=RequestMethod.GET)
+    public String searchList(
+            Model model,
+            @ModelAttribute Contact contact,
+            HttpServletRequest request,
+            HttpServletResponse response
+    ) {
+        User loggedUser = HibernateUtil.getLoggedUser(request);
+        contact.setUser(loggedUser);
+        save(contact);
+        contacts(model, request, response);
+        return "search";
+    }
+
 
     @RequestMapping(value = "/registration", method=RequestMethod.GET)
     public String registration(

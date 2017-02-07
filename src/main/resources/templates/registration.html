@@ -10,8 +10,8 @@
 <h1>Пожалуйста, заполните форму:</h1>
 
 <form action="#" th:action="@{/registration}" th:object="${user}" method="post">
-    <p>Login :      <input type="text" th:field="*{login}" /></p>
-    <p>Password :   <input type="text" th:field="*{password}" /></p>
+    <p>Логин :      <input type="text" th:field="*{login}" /></p>
+    <p>Пароль :   <input type="text" th:field="*{password}" /></p>
     <p>Полное имя :  <input type="text" th:field="*{fullName}" /></p>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>

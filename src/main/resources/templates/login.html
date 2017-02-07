@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="../resources/css/bootstrap-theme.css" />
 </head>
 <body>
-<h1>Form</h1>
+<h1>Страница приветствия</h1>
 
 <form action="#" th:action="@{/login}" th:object="${user}" method="post">
-    <p>Login :      <input type="text" th:field="*{login}" /></p>
-    <p>Password :   <input type="text" th:field="*{password}" /></p>
-    <p><input type="submit" value="Login" /></p>
+    Имя пользователя :      <p><input type="text" th:field="*{login}" /></p>
+    Пароль :   <p><input type="text" th:field="*{password}" /></p>
+    <p><input type="submit" value="Зайти" /></p>
 </form>
 </body>
 </html>
