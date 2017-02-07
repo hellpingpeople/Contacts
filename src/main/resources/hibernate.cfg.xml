@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+
+        <!--<property name="dialect">org.hibernate.dialect.SQLiteDialect</property>-->
+        <!--<property name="connection.driver_class">org.sqlite.JDBC</property>-->
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/contacts_db</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">postgres</property>
+
+        <!--<property name="connection.url">jdbc:sqlite:./src/main/resources/contactsDB</property>-->
+
+        <mapping class="com.contacts.model.Contact"></mapping>
+        <mapping class="com.contacts.model.User"></mapping>
+        <mapping class="com.contacts.model.UserSession"></mapping>
+    </session-factory>
+</hibernate-configuration>

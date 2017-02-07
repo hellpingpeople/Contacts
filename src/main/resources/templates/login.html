@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting started: login first</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Form</h1>
+
+<form action="#" th:action="@{/login}" th:object="${user}" method="post">
+    <p>Login :      <input type="text" th:field="*{login}" /></p>
+    <p>Password :   <input type="text" th:field="*{password}" /></p>
+    <p><input type="submit" value="Login" /></p>
+</form>
+</body>
+</html>

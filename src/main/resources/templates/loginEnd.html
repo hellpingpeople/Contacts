@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Login information</h1>
+<div th:switch="${loginStatus}">
+    <div th:case="true">
+        <h4>Success! Logged in with credentials:</h4>
+        <p th:text="'Login : ' + ${user.login}" />
+        <p th:text="'Password : ' + ${user.password}" />
+        <a th:href="@{/contacts}">Manage your contacts</a>
+    </div>
+    <div th:case="false">
+        <h4>Wrong username or password!</h4>
+        <a th:href="@{/login}">Login again</a>
+        <a th:href="@{/registration}">Create account</a>
+    </div>
+    <div th:case="*">Unexpected error</div>
+</div>
+</body>
+</html>

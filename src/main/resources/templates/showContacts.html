@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Contact list</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+
+<h1 th:text="'Hi, ' + ${user.login}"/>
+<a th:href="@{/logout}">Logout?</a>
+<table>
+    <tr>
+        <th align="left">Last name</th>
+        <th align="left">First name</th>
+        <th align="left">Middle name</th>
+        <th align="left">Mobile phone</th>
+        <th align="left">Home phone</th>
+        <th align="left">Address</th>
+        <th align="left">Email</th>
+        <th align="left"></th>
+        <th align="left"></th>
+    </tr>
+    <tr th:each="contact,iterationStatus  : ${user.contacts}">
+    <td th:text="${contact.lastName}">-</td>
+    <td th:text="${contact.firstName}">-</td>
+    <td th:text="${contact.middleName}">-</td>
+    <td th:text="${contact.mobileNumber}">-</td>
+    <td th:text="${contact.homeNumber}">-</td>
+    <td th:text="${contact.address}">-</td>
+    <td th:text="${contact.email}">-</td>
+    <td><a th:href="@{'/contacts/edit/' + ${contact.id}}">edit</a></td>
+    <td><a th:href="@{'/contacts/remove/' + ${contact.id}}">remove</a></td>
+    </tr>
+    <tr><td><a th:href="@{/contacts/new}">Add new contact</a></td></tr>
+</table>
+</body>
+</html>
