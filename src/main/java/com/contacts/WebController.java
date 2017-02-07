@@ -185,12 +185,5 @@ public class WebController {
     public static void main(String[] args) throws Exception {
         SpringApplication.run(WebController.class, args);
 
-        RuntimeMXBean runtimeMxBean = ManagementFactory.getRuntimeMXBean();
-        List<String> arguments = runtimeMxBean.getInputArguments();
-
-        String propertyPath = null;
-        for (String argument : arguments)
-            if (argument.contains("-Dlardi.conf"))
-                propertyPath = argument.split("=")[1];
     }
 }

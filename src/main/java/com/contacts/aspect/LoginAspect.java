@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 /**
- * Created by pdudenkov on 23.05.2016.
+ * Created by Alexander Vashurin 07.02.2017
  */
 @Aspect
 public class LoginAspect {

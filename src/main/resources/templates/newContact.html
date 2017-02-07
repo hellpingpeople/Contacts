@@ -3,17 +3,19 @@
 <head>
     <title>New contact</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../resources/css/bootstrap.css" />
+    <link rel="stylesheet" href="../resources/css/bootstrap-theme.css" />
 </head>
 <body>
-<h1>Please fill in the forms:</h1>
+<h1>Пожалуйста заполните форму:</h1>
 
 <form action="#" th:action="@{/contacts/new}" th:object="${contact}" method="post">
-    <p>First name:      <input type="text" th:field="*{firstName}" /></p>
-    <p>Last name:       <input type="text" th:field="*{lastName}" /></p>
-    <p>MIddle name:     <input type="text" th:field="*{middleName}" /></p>
-    <p>Mobile number:   <input type="text" th:field="*{mobileNumber}" /></p>
-    <p>Home number:     <input type="text" th:field="*{homeNumber}" /></p>
-    <p>Address:         <input type="text" th:field="*{address}" /></p>
+    <p>Имя:      <input type="text" th:field="*{firstName}" /></p>
+    <p>Фамилие:       <input type="text" th:field="*{lastName}" /></p>
+    <p>Отчество:     <input type="text" th:field="*{middleName}" /></p>
+    <p>телефон мобильный:   <input type="text" th:field="*{mobileNumber}" /></p>
+    <p>телефон домашний:     <input type="text" th:field="*{homeNumber}" /></p>
+    <p>адрес проживания:         <input type="text" th:field="*{address}" /></p>
     <p>Email:           <input type="text" th:field="*{email}" /></p>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>

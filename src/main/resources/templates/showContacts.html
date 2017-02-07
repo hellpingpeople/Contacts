@@ -3,6 +3,8 @@
 <head>
     <title>Contact list</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../resources/css/bootstrap.css" />
+    <link rel="stylesheet" href="../resources/css/bootstrap-theme.css" />
     <style>
         table {
             font-family: arial, sans-serif;
@@ -12,30 +14,31 @@
 
         td, th {
             border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
+            text-align: center;
+            padding: 8pt;
         }
 
         tr:nth-child(even) {
             background-color: #dddddd;
         }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </head>
 <body>
 
-<h1 th:text="'Hi, ' + ${user.login}"/>
+<h1 th:text="'Привет, ' + ${user.login}"/>
 <a th:href="@{/logout}">Logout?</a>
 <table>
     <tr>
-        <th align="left">Last name</th>
-        <th align="left">First name</th>
-        <th align="left">Middle name</th>
-        <th align="left">Mobile phone</th>
-        <th align="left">Home phone</th>
-        <th align="left">Address</th>
+        <th align="left">Фамилия</th>
+        <th align="left">Имя</th>
+        <th align="left">Отчество</th>
+        <th align="left">телефон мобильный</th>
+        <th align="left">телефон домашний</th>
+        <th align="left">адрес</th>
         <th align="left">Email</th>
-        <th align="left"></th>
-        <th align="left"></th>
+        <th align="left">Редактировать</th>
+        <th align="left">Удалить</th>
     </tr>
     <tr th:each="contact,iterationStatus  : ${user.contacts}">
     <td th:text="${contact.lastName}">-</td>
@@ -48,7 +51,7 @@
     <td><a th:href="@{'/contacts/edit/' + ${contact.id}}">edit</a></td>
     <td><a th:href="@{'/contacts/remove/' + ${contact.id}}">remove</a></td>
     </tr>
-    <tr><td><a th:href="@{/contacts/new}">Add new contact</a></td></tr>
+    <tr><td><a th:href="@{/contacts/new}">Добавить контакт</a></td></tr>
 </table>
 </body>
 </html>
