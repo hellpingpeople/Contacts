@@ -26,7 +26,8 @@
 </head>
 <body>
 
-<h1 th:text="'Привет, ' + ${user.login}"/>
+
+<h1 th:text="'Привет, ' + ((${user.login}=='')? 'неизвестный человек!':${user.login} )"/>
 <a th:href="@{/logout}">Logout?</a>
 <table>
     <tr>

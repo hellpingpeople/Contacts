@@ -11,7 +11,7 @@
 <div th:switch="${loginStatus}">
     <div th:case="true">
         <h4>Success! Logged in with credentials:</h4>
-        <p th:text="'Login : ' + ${user.login}" />
+        <p th:text="'Login : ' + ${user.login} " />
         <p th:text="'Password : ' + ${user.password}" />
         <a th:href="@{/contacts}">Manage your contacts</a>
     </div>
