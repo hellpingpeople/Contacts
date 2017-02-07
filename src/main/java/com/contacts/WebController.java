@@ -129,16 +129,15 @@ public class WebController {
     }
 
     @RequestMapping(value = "/search", method=RequestMethod.GET)
-    public String searchList(
-            Model model,
-            @ModelAttribute Contact contact,
-            HttpServletRequest request,
-            HttpServletResponse response
-    ) {
-        User loggedUser = HibernateUtil.getLoggedUser(request);
-        contact.setUser(loggedUser);
-        save(contact);
-        contacts(model, request, response);
+    public String Search(
+        Model model,
+        @ModelAttribute Contact contact,
+        HttpServletRequest request,
+        HttpServletResponse response){
+        if(request != null){
+            contacts(model,request, response);
+        }
+
         return "search";
     }
 

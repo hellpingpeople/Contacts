@@ -48,6 +48,8 @@ public class HibernateUtil {
         return user;
     }
 
+
+
     public static void save(Object object) {
         Session session = getSessionFactory().openSession();
         session.beginTransaction();
