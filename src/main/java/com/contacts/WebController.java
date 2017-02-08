@@ -5,24 +5,22 @@ import com.contacts.db.HibernateUtil;
 import com.contacts.model.Contact;
 import com.contacts.model.User;
 import com.contacts.model.UserSession;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.springframework.boot.*;
-import org.springframework.boot.autoconfigure.*;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.stereotype.*;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.lang.management.ManagementFactory;
-import java.lang.management.RuntimeMXBean;
-import java.util.List;
 
-import static com.contacts.db.HibernateUtil.*;
+import static com.contacts.db.HibernateUtil.getLoggedUser;
+import static com.contacts.db.HibernateUtil.save;
 
 @Controller
 @EnableAspectJAutoProxy
@@ -99,7 +97,7 @@ public class WebController {
     ) {
         contact.setUser(HibernateUtil.getLoggedUser(request));
         HibernateUtil.editContact(contact);
-        //model.addAttribute("contact", contact);
+        model.addAttribute("contact", contact);
         contacts(model, request, response);
         return "showContacts";
     }
@@ -126,19 +124,6 @@ public class WebController {
         save(contact);
         contacts(model, request, response);
         return "showContacts";
-    }
-
-    @RequestMapping(value = "/search", method=RequestMethod.GET)
-    public String Search(
-        Model model,
-        @ModelAttribute Contact contact,
-        HttpServletRequest request,
-        HttpServletResponse response){
-        if(request != null){
-            contacts(model,request, response);
-        }
-
-        return "search";
     }
 
 

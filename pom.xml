@@ -5,11 +5,10 @@
 
 	<groupId>com.contacts</groupId>
 	<artifactId>Contacts</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.2</version>
 	<packaging>war</packaging>
-
 	<name>Contacts</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Demo project for SberTech</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
