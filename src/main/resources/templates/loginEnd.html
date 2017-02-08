@@ -13,7 +13,7 @@
         <h4>Добро пожаловать!:</h4>
         <p th:text="'Логин : ' + ${user.login} " />
         <p th:text="'Пароль : ' + ${user.password}" />
-        <a th:href="@{/contacts}">Управление логином</a>
+        <a th:href="@{/contacts}">Управление контактами</a>
     </div>
     <div th:case="false">
         <h4>Неверный логин или пароль</h4>
