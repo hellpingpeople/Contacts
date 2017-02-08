@@ -6,7 +6,7 @@
 	<groupId>com.contacts</groupId>
 	<artifactId>Contacts</artifactId>
 	<version>0.2</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>Contacts</name>
 	<description>Demo project for SberTech</description>
 
