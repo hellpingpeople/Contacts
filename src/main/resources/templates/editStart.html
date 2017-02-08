@@ -3,17 +3,16 @@
 <head>
     <title>Редактровать контакт</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" href="../resources/css/bootstrap.css"/>
-    <link rel="stylesheet" href="../resources/css/bootstrap-theme.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
 <body>
-<style>
-    p {
-        border: 0px solid #dddddd;
-        text-align: left;
-        padding: 2pt;
-    }
-</style>
+<!--<style>-->
+    <!--p {-->
+        <!--border: 0px solid #dddddd;-->
+        <!--text-align: left;-->
+        <!--padding: 2pt;-->
+    <!--}-->
+<!--</style>-->
 <h1>Текущий контакт:</h1>
 
 <form action="#" th:action="@{'/contacts/edit/' + ${contact.id}}" th:object="${contact}" method="post">

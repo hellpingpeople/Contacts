@@ -3,15 +3,14 @@
 <head>
     <title>Добро пожаловать, войдите в систему</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="../resources/css/bootstrap.css" />
-    <link rel="stylesheet" href="../resources/css/bootstrap-theme.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
 <body>
 <h1>Страница приветствия</h1>
 
 <form action="#" th:action="@{/login}" th:object="${user}" method="post">
     Имя пользователя :      <p><input type="text" th:field="*{login}" /></p>
-    Пароль :   <p><input type="text" th:field="*{password}" /></p>
+    Пароль :   <p><input type="password" th:field="*{password}" /></p>
     <p><input type="submit" value="Зайти" /></p>
 </form>
 </body>
